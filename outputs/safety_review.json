@@ -1,0 +1,135 @@
+{
+  "missing_fields": [],
+  "conflicts": [
+    {
+      "field": "admission_date",
+      "values": [
+        "09/08/2022",
+        "gb - 2-4"
+      ],
+      "type": "conflicting_information"
+    },
+    {
+      "field": "principal_diagnosis",
+      "values": [
+        "Cholera",
+        "DKA (Diabetic Ketoacidosis)",
+        "Grade I fatty infiltration (liver)",
+        "Cholelithiasis",
+        "Mild hepatomegaly",
+        "ACUTE GASTROENTERITIS WITH DEHYDRATION"
+      ],
+      "type": "conflicting_information"
+    },
+    {
+      "field": "secondary_diagnoses",
+      "values": [
+        "Thyroid disorder",
+        "Urticaria",
+        "URINARY TRACT INFECTION",
+        "Uncontrolled Type 2 Diabetes Mellitus",
+        "Minimal ascites",
+        "Grade-I fatty liver changes",
+        "Minimal right pleural effusion",
+        "colitis",
+        "Subsegmental lung"
+      ],
+      "type": "conflicting_information"
+    },
+    {
+      "field": "allergies",
+      "values": [
+        "Known Drug Allergies: nil",
+        "No known allergies",
+        "No known drug allergies",
+        "Known Drug Allergies"
+      ],
+      "type": "conflicting_information"
+    },
+    {
+      "field": "procedures",
+      "values": [
+        "USG abdomen and pelvis",
+        "Tapping",
+        "Blood Transfussion",
+        "Viral Serolopy/Study",
+        "Bubble CPAP",
+        "Dressing",
+        "Oxygen",
+        "HFNG",
+        "Bone marrow",
+        "Blood (./5.",
+        "USG Abdomen & Pelvis (Bedside)",
+        "LISG/ECHO",
+        "Phototherapy"
+      ],
+      "type": "conflicting_information"
+    },
+    {
+      "field": "follow_up_instructions",
+      "values": [
+        "Review immediately in case of fever, loose stools, vomiting, fatigue.",
+        "Review on 09.03.2026 for CBC."
+      ],
+      "type": "conflicting_information"
+    }
+  ],
+  "medication_changes": {
+    "added": [
+      {
+        "name": "tab",
+        "dose": null,
+        "route": null,
+        "frequency": null,
+        "raw": "TAB. MEFTAL SPAS"
+      }
+    ],
+    "removed": [],
+    "modified": []
+  },
+  "pending_results": [
+    {
+      "value": "Urine culture and sensitivity",
+      "evidence": "Urine culture and sensitivity sent- report awaited.",
+      "source_document": "COURSE IN THE HOSPITAL / FOLLOW-UP INSTRUCTIONS",
+      "chunk_number": "1"
+    }
+  ],
+  "review_flags": [
+    {
+      "type": "missing_required_field",
+      "field": "discharge_date",
+      "message": "Missing required field: discharge_date"
+    },
+    {
+      "type": "conflict",
+      "field": "admission_date",
+      "message": "Conflict detected in admission_date"
+    },
+    {
+      "type": "conflict",
+      "field": "principal_diagnosis",
+      "message": "Conflict detected in principal_diagnosis"
+    },
+    {
+      "type": "conflict",
+      "field": "secondary_diagnoses",
+      "message": "Conflict detected in secondary_diagnoses"
+    },
+    {
+      "type": "conflict",
+      "field": "allergies",
+      "message": "Conflict detected in allergies"
+    },
+    {
+      "type": "conflict",
+      "field": "procedures",
+      "message": "Conflict detected in procedures"
+    },
+    {
+      "type": "conflict",
+      "field": "follow_up_instructions",
+      "message": "Conflict detected in follow_up_instructions"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+extract_patient_evidence:
+  description: >
+    Analyze the provided document chunk.
+
+    CHUNK NUMBER: {chunk_number}
+
+    DOCUMENT CONTENT: {patient_documents}
+
+    The current chunk may contain partial, incomplete, or conflicting information.
+
+    Preserve all evidence exactly as documented.
+
+    You are processing ONLY ONE CHUNK of a larger patient medical record.
+
+    The current chunk may not contain all patient information.
+
+    Do not assume information is missing from the patient record simply because it does not appear in this chunk.
+
+    Extract all clinical evidence explicitly present in this chunk only.
+
+    Never infer, estimate, assume, summarize, interpret, or invent clinical facts.
+
+    For every extracted fact include:
+
+    - value
+    - supporting evidence text
+    - source document name (if available)
+    - chunk number
+
+    Extract the following categories:
+
+    1. patient_demographics
+    2. admission_date
+    3. discharge_date
+    4. principal_diagnosis
+    5. secondary_diagnoses
+    6. procedures
+    7. allergies
+    8. admission_medications
+    9. discharge_medications
+    10. hospital_course
+    11. follow_up_instructions
+    12. pending_results
+    13. discharge_condition
+
+    Return ONLY structured JSON.
+
+    Use this schema:
+
+    {
+      "patient_demographics": [],
+      "admission_date": [],
+      "discharge_date": [],
+      "principal_diagnosis": [],
+      "secondary_diagnoses": [],
+      "procedures": [],
+      "allergies": [],
+      "admission_medications": [],
+      "discharge_medications": [],
+      "hospital_course": [],
+      "follow_up_instructions": [],
+      "pending_results": [],
+      "discharge_condition": []
+    }
+
+    Every item must follow:
+
+    {
+      "value": "...",
+      "evidence": "...",
+      "source_document": "...",
+      "chunk_number": "{chunk_number}"
+    }
+
+    If a category is not present in the current chunk, return an empty list for that category.
+
+    Do not generate a discharge summary.
+
+    Do not resolve conflicts.
+
+    Do not determine final diagnoses.
+
+    Only extract evidence that is explicitly supported by the current chunk.
+
+
+  expected_output: >
+    A structured evidence repository in valid JSON format containing only
+    document-supported clinical information and source references.
+
+  agent: document_analyst
+
+perform_safety_review:
+  description: >
+    Review the extracted evidence repository and identify safety concerns.
+
+    ```
+    Perform the following checks:
+
+    1. Missing Required Fields
+      - admission date
+      - discharge date
+      - diagnosis
+      - medications
+      - follow-up instructions
+      - discharge condition
+
+    2. Conflicting Information
+      - conflicting diagnoses
+      - conflicting dates
+      - conflicting allergies
+      - conflicting discharge information
+
+    3. Medication Reconciliation
+      Compare admission medications and discharge medications.
+
+      Identify:
+      - added medications
+      - removed medications
+      - dosage changes
+      - frequency changes
+
+      If documentation does not provide a reason for a medication
+      change, create a reconciliation flag.
+
+    4. Pending Results
+      Identify laboratory tests, cultures, imaging studies,
+      or investigations that remain pending.
+
+    5. Escalation Review
+      Generate clinician review flags for:
+      - unresolved conflicts
+      - undocumented medication changes
+      - missing required discharge elements
+      - unclear diagnoses
+
+    Never resolve conflicts yourself.
+
+    Never choose one fact over another when evidence disagrees.
+
+    Preserve all conflicting evidence for clinician review.
+
+    Return ONLY structured JSON.
+
+    Use this schema:
+
+    {
+      "missing_fields": [],
+      "conflicts": [],
+      "medication_changes": {
+        "added": [],
+        "removed": [],
+        "modified": []
+      },
+      "pending_results": [],
+      "review_flags": []
+    }
+    ```
+
+  expected_output: >
+    A structured safety review report containing conflicts,
+    medication reconciliation findings, missing fields,
+    pending results, and clinician review flags.
+
+  agent: clinical_safety_reviewer
+
+  context:
+  - extract_patient_evidence
+
+
+
+
+
+
+generate_discharge_summary:
+  description: >
+    You are given TWO inputs:
+
+    1. Evidence Repository (structured JSON from all document chunks)
+    2. Safety Review Report (conflicts, missing fields, medication changes)
+
+    Evidence Repository:
+    {evidence_repository}
+
+    Safety Review:
+    {safety_review}
+
+    STRICT INSTRUCTIONS:
+    - Use ONLY the provided JSON data
+    - Do NOT ask for more input
+    - Do NOT assume missing fields
+    - If a field is missing, write:
+      "NOT DOCUMENTED - CLINICIAN REVIEW REQUIRED"
+
+    Generate a complete discharge summary.
+
+  expected_output: >
+    A structured clinician-ready discharge summary.
+
+  agent: discharge_summary_generator
+
+  context:
+    - extract_patient_evidence
+    - perform_safety_review

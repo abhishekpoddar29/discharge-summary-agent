@@ -1,0 +1,30 @@
+[project]
+name = "discharge_summary_agent"
+version = "0.1.0"
+description = "discharge_summary_agent using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[google-genai,tools]",
+    "google-generativeai>=0.8.6",
+    "pdfplumber>=0.11.9",
+    "pillow>=12.2.0",
+    "pymupdf>=1.26.7",
+    "pytesseract>=0.3.13",
+    "python-dotenv>=1.2.2",
+]
+
+[project.scripts]
+discharge_summary_agent = "discharge_summary_agent.main:run"
+run_crew = "discharge_summary_agent.main:run"
+train = "discharge_summary_agent.main:train"
+replay = "discharge_summary_agent.main:replay"
+test = "discharge_summary_agent.main:test"
+run_with_trigger = "discharge_summary_agent.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

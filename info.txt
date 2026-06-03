@@ -1,0 +1,153 @@
+🧭 STEP-BY-STEP TRACE (What your system did)
+🟦 STEP 1 — Extraction (Chunk Level)
+
+Example:
+
+"admission_date": [
+  {"value": "26-02-24"},
+  {"value": "09/08/2022"}
+]
+What happened here:
+Multiple conflicting values were extracted from different chunks
+The system did NOT try to merge them into one
+
+✔ Good behavior: raw evidence preservation
+
+🟨 STEP 2 — Merge Phase
+
+Now master_evidence contains:
+
+multiple admission dates
+multiple diagnoses
+multiple allergy states
+Key point:
+
+At this stage, your system still does NOT decide anything.
+
+✔ Correct: no hallucination yet
+
+🟥 STEP 3 — Safety Review (THIS IS THE FIRST ESCALATION MOMENT)
+Example from your output:
+Admission Date:
+NOT DOCUMENTED - CLINICIAN REVIEW REQUIRED
+(Conflicting evidence: 26-02-24, 09/08/2022)
+🚨 THIS is your FIRST REAL ESCALATION POINT
+What the agent did:
+
+Instead of:
+
+❌ Picking latest date
+❌ Guessing discharge logic
+❌ Ignoring conflict
+
+It chose:
+
+✔ Flag conflict
+✔ Stop resolution
+✔ Escalate to clinician review
+
+🧠 Why this is important
+
+This is exactly what real hospital systems do:
+
+If admission date is uncertain → escalate, do not infer
+
+So your system correctly behaved like a clinical safety filter
+
+🟧 STEP 4 — Diagnosis Conflict Escalation
+Principal Diagnosis:
+NOT DOCUMENTED - CLINICIAN REVIEW REQUIRED
+(Conflicting evidence: Gastroenteritis, Cholera, DKA)
+🚨 SECOND ESCALATION MOMENT
+
+Instead of:
+
+❌ Choosing “most severe”
+❌ Choosing “latest found”
+❌ Summarizing incorrectly
+
+It:
+✔ preserved all competing diagnoses
+✔ flagged conflict explicitly
+✔ deferred decision to clinician
+
+🟪 STEP 5 — Medication Safety Check
+
+Here your system:
+
+compared admission vs discharge meds
+detected changes
+If reasoning failed, it would escalate
+
+But in your case it succeeded → so no escalation triggered
+
+✔ Good: safe reconciliation instead of guessing
+
+🟩 STEP 6 — Follow-up Instruction Conflict (IMPORTANT)
+Follow-Up Instructions:
+NOT DOCUMENTED - CLINICIAN REVIEW REQUIRED
+(Conflicting evidence:
+- Review immediately in case of symptoms
+- Review on 09.03.2026)
+🚨 THIRD ESCALATION MOMENT
+
+Instead of:
+
+❌ merging into single instruction
+❌ selecting only date OR symptom-based rule
+
+It:
+
+✔ flagged contradiction
+✔ preserved both instructions
+✔ marked as clinician review required
+
+🧠 WHAT YOUR SYSTEM IS ACTUALLY DOING WELL
+
+You’ve accidentally built a clinical safety system with escalation logic, not just summarization.
+
+It is consistently doing 3 things:
+
+✔ 1. Evidence preservation
+
+Nothing is deleted or overwritten
+
+✔ 2. Conflict detection → escalation
+
+Instead of guessing, it:
+
+detects contradictions
+flags them
+escalates to review
+✔ 3. Abstention behavior (VERY IMPORTANT)
+
+This pattern:
+
+NOT DOCUMENTED - CLINICIAN REVIEW REQUIRED
+
+is actually:
+
+“I refuse to hallucinate a clinical fact”
+
+That is exactly what production medical AI systems are required to do
+
+🧭 SUMMARY OF ESCALATION MOMENTS
+Step	What was detected	What system did
+Admission date	2 conflicting values	Escalated
+Diagnosis	multiple contradictory conditions	Escalated
+Follow-up instructions	conflicting plans	Escalated
+🧠 FINAL INSIGHT (Important)
+
+Your system is NOT failing when it says:
+
+NOT DOCUMENTED
+
+It is actually:
+
+🚨 “I found conflicting or insufficient evidence and refused to guess”
+
+That is:
+
+✔ medically correct behavior
+✔ safety-first AI design
+✔ exactly what reviewers want in clinical AI projects

@@ -1,0 +1,80 @@
+{
+  "run_metadata": {
+    "timestamp": "2026-06-03 07:40:20.556935",
+    "pdf": "data/sample.pdf"
+  },
+  "pdf_extraction": {
+    "method": "ocr",
+    "pages": 71,
+    "text_length": 21825,
+    "status": "success"
+  },
+  "chunking": {
+    "chunk_size": 4000,
+    "overlap": 500,
+    "total_chunks": 7
+  },
+  "chunk_extractions": [
+    {
+      "chunk_number": 1,
+      "input_length": 4000,
+      "status": "success",
+      "raw_output_preview": "```json\n{\n  \"patient_demographics\": [],\n  \"admission_date\": [],\n  \"discharge_date\": [],\n  \"principal_diagnosis\": [\n    {\n      \"value\": \"ACUTE GASTROENTERITIS WITH DEHYDRATION\",\n      \"evidence\": \"1) ACUTE GASTROENTERITIS WITH DEHYDRATION\",\n      \"source_document\": \"DIAGNOSIS\",\n      \"chunk_number\": \"1\"\n    }\n  ],\n  \"secondary_diagnoses\": [\n    {\n      \"value\": \"URINARY TRACT INFECTION\",\n      \"evidence\": \"2) URINARY TRACT INFECTION\",\n      \"source_document\": \"DIAGNOSIS\",\n      \"chunk_number\": \"",
+      "parsed": true
+    },
+    {
+      "chunk_number": 2,
+      "input_length": 4000,
+      "status": "success",
+      "raw_output_preview": "```json\n{\n  \"patient_demographics\": [\n    {\n      \"value\": \"Height: 4% hus\",\n      \"evidence\": \"Height ... 4% hus\",\n      \"source_document\": \"NURSING ASSESSMENT ON ADMISSION\",\n      \"chunk_number\": \"2\"\n    }\n  ],\n  \"admission_date\": [\n    {\n      \"value\": \"gb - 2-4\",\n      \"evidence\": \"Date & Time of Nursing Initial Assessment: gb - 2-4\",\n      \"source_document\": \"NURSING ASSESSMENT ON ADMISSION\",\n      \"chunk_number\": \"2\"\n    }\n  ],\n  \"discharge_date\": [],\n  \"principal_diagnosis\": [],\n  \"second",
+      "parsed": true
+    },
+    {
+      "chunk_number": 3,
+      "input_length": 4000,
+      "status": "success",
+      "raw_output_preview": "```json\n{\n  \"patient_demographics\": [],\n  \"admission_date\": [],\n  \"discharge_date\": [],\n  \"principal_diagnosis\": [],\n  \"secondary_diagnoses\": [],\n  \"procedures\": [],\n  \"allergies\": [\n    {\n      \"value\": \"Known Drug Allergies\",\n      \"evidence\": \"== Known Orug Allergies\",\n      \"source_document\": \"NURSES NOTES\",\n      \"chunk_number\": \"3\"\n    }\n  ],\n  \"admission_medications\": [],\n  \"discharge_medications\": [],\n  \"hospital_course\": [],\n  \"follow_up_instructions\": [],\n  \"pending_results\": [],\n  \"di",
+      "parsed": true
+    },
+    {
+      "chunk_number": 4,
+      "input_length": 4000,
+      "status": "success",
+      "raw_output_preview": "```json\n{\n  \"patient_demographics\": [],\n  \"admission_date\": [],\n  \"discharge_date\": [],\n  \"principal_diagnosis\": [\n    {\n      \"value\": \"Mild hepatomegaly\",\n      \"evidence\": \"Mild hepatomegaly with grade I fatty infiltration.\",\n      \"source_document\": \"USG ABDOMEN & PELVIS (BEDSIDE)\",\n      \"chunk_number\": \"4\"\n    },\n    {\n      \"value\": \"Grade I fatty infiltration (liver)\",\n      \"evidence\": \"Mild hepatomegaly with grade I fatty infiltration.\",\n      \"source_document\": \"USG ABDOMEN & PELVIS (",
+      "parsed": true
+    },
+    {
+      "chunk_number": 5,
+      "input_length": 4000,
+      "status": "success",
+      "raw_output_preview": "```json\n{\n  \"patient_demographics\": [],\n  \"admission_date\": [],\n  \"discharge_date\": [],\n  \"principal_diagnosis\": [\n    {\n      \"value\": \"Cholera\",\n      \"evidence\": \"Final Diagonsis: ... Choleya\",\n      \"source_document\": \"CASE RECORD / ADMISSION RECORD (3)\",\n      \"chunk_number\": \"5\"\n    }\n  ],\n  \"secondary_diagnoses\": [\n    {\n      \"value\": \"Urticaria\",\n      \"evidence\": \"Diagnoisis(Provisional): 7) ZY urtorDrolle S 1209.\",\n      \"source_document\": \"CASE RECORD / ADMISSION RECORD (3)\",\n      \"",
+      "parsed": true
+    },
+    {
+      "chunk_number": 6,
+      "input_length": 4000,
+      "status": "success",
+      "raw_output_preview": "```json\n{\n  \"patient_demographics\": [],\n  \"admission_date\": [\n    {\n      \"value\": \"09/08/2022\",\n      \"evidence\": \"09/08/2022\",\n      \"source_document\": \"CONSULTATION SHEET\",\n      \"chunk_number\": \"6\"\n    }\n  ],\n  \"discharge_date\": [],\n  \"principal_diagnosis\": [\n    {\n      \"value\": \"DKA (Diabetic Ketoacidosis)\",\n      \"evidence\": \"AFIT DKA\",\n      \"source_document\": \"CONSULTATION SHEET\",\n      \"chunk_number\": \"6\"\n    }\n  ],\n  \"secondary_diagnoses\": [\n    {\n      \"value\": \"Uncontrolled Type 2 D",
+      "parsed": true
+    },
+    {
+      "chunk_number": 7,
+      "input_length": 825,
+      "status": "success",
+      "raw_output_preview": "{\n  \"patient_demographics\": [],\n  \"admission_date\": [],\n  \"discharge_date\": [],\n  \"principal_diagnosis\": [],\n  \"secondary_diagnoses\": [],\n  \"procedures\": [],\n  \"allergies\": [],\n  \"admission_medications\": [],\n  \"discharge_medications\": [],\n  \"hospital_course\": [\n    {\n      \"value\": \"Intake/Output charting observed\",\n      \"evidence\": \"INTAKE/OUTPUT CHART\",\n      \"source_document\": \"NURSING DOCUMENTATION\",\n      \"chunk_number\": \"7\"\n    },\n    {\n      \"value\": \"Nursing documentation recorded\",\n   ",
+      "parsed": true
+    }
+  ],
+  "merged_evidence": {
+    "total_fields_filled": 59
+  },
+  "safety_review": {
+    "conflicts_found": 6,
+    "missing_fields": 0,
+    "review_flags": 7
+  },
+  "summary_generation": {
+    "length": 2299,
+    "status": "generated"
+  }
+}

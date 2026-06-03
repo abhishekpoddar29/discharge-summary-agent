@@ -1,0 +1,380 @@
+{
+  "patient_demographics": [
+    {
+      "value": "Height: 4% hus",
+      "evidence": "Height ... 4% hus",
+      "source_document": "NURSING ASSESSMENT ON ADMISSION",
+      "chunk_number": "2"
+    }
+  ],
+  "admission_date": [
+    {
+      "value": "gb - 2-4",
+      "evidence": "Date & Time of Nursing Initial Assessment: gb - 2-4",
+      "source_document": "NURSING ASSESSMENT ON ADMISSION",
+      "chunk_number": "2"
+    },
+    {
+      "value": "09/08/2022",
+      "evidence": "09/08/2022",
+      "source_document": "CONSULTATION SHEET",
+      "chunk_number": "6"
+    }
+  ],
+  "discharge_date": [],
+  "principal_diagnosis": [
+    {
+      "value": "ACUTE GASTROENTERITIS WITH DEHYDRATION",
+      "evidence": "1) ACUTE GASTROENTERITIS WITH DEHYDRATION",
+      "source_document": "DIAGNOSIS",
+      "chunk_number": "1"
+    },
+    {
+      "value": "Mild hepatomegaly",
+      "evidence": "Mild hepatomegaly with grade I fatty infiltration.",
+      "source_document": "USG ABDOMEN & PELVIS (BEDSIDE)",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Grade I fatty infiltration (liver)",
+      "evidence": "Mild hepatomegaly with grade I fatty infiltration.",
+      "source_document": "USG ABDOMEN & PELVIS (BEDSIDE)",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Cholelithiasis",
+      "evidence": "Cholelithiasis without cholecystitis.",
+      "source_document": "USG ABDOMEN & PELVIS (BEDSIDE)",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Cholera",
+      "evidence": "Final Diagonsis: ... Choleya",
+      "source_document": "CASE RECORD / ADMISSION RECORD (3)",
+      "chunk_number": "5"
+    },
+    {
+      "value": "DKA (Diabetic Ketoacidosis)",
+      "evidence": "AFIT DKA",
+      "source_document": "CONSULTATION SHEET",
+      "chunk_number": "6"
+    }
+  ],
+  "secondary_diagnoses": [
+    {
+      "value": "URINARY TRACT INFECTION",
+      "evidence": "2) URINARY TRACT INFECTION",
+      "source_document": "DIAGNOSIS",
+      "chunk_number": "1"
+    },
+    {
+      "value": "Thyroid disorder",
+      "evidence": "PAST HISTORY: K/C/O Thyroid disorder on treatment.",
+      "source_document": "PAST HISTORY",
+      "chunk_number": "1"
+    },
+    {
+      "value": "Grade-I fatty liver changes",
+      "evidence": "USG abdomen and pelvis done showed Grade-I fatty liver changes",
+      "source_document": "COURSE IN THE HOSPITAL",
+      "chunk_number": "1"
+    },
+    {
+      "value": "colitis",
+      "evidence": "mildly edematous part of ascending colon upto the hepatic Mlexure- could represent colitis.",
+      "source_document": "COURSE IN THE HOSPITAL",
+      "chunk_number": "1"
+    },
+    {
+      "value": "Minimal ascites",
+      "evidence": "Minimal ascites.",
+      "source_document": "USG ABDOMEN & PELVIS (BEDSIDE)",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Minimal right pleural effusion",
+      "evidence": "Minimal right pleural effusion with underlying subsegmental lung",
+      "source_document": "USG ABDOMEN & PELVIS (BEDSIDE)",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Subsegmental lung",
+      "evidence": "Minimal right pleural effusion with underlying subsegmental lung",
+      "source_document": "USG ABDOMEN & PELVIS (BEDSIDE)",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Urticaria",
+      "evidence": "Diagnoisis(Provisional): 7) ZY urtorDrolle S 1209.",
+      "source_document": "CASE RECORD / ADMISSION RECORD (3)",
+      "chunk_number": "5"
+    },
+    {
+      "value": "Uncontrolled Type 2 Diabetes Mellitus",
+      "evidence": "Uncontrolled T2-DM",
+      "source_document": "CONSULTATION SHEET",
+      "chunk_number": "6"
+    }
+  ],
+  "procedures": [
+    {
+      "value": "USG abdomen and pelvis",
+      "evidence": "USG abdomen and pelvis done showed Grade-I fatty liver changes and mildly edematous part of ascending colon upto the hepatic Mlexure",
+      "source_document": "COURSE IN THE HOSPITAL",
+      "chunk_number": "1"
+    },
+    {
+      "value": "Phototherapy",
+      "evidence": "Phototherapy",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "Blood (./5.",
+      "evidence": "Blood (./5.",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "Bubble CPAP",
+      "evidence": "Bubble CPAP",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "Oxygen",
+      "evidence": "Oxygen",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "HFNG",
+      "evidence": "HFNG",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "Viral Serolopy/Study",
+      "evidence": "Viral Serolopy/Study",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "Bone marrow",
+      "evidence": "Bone marrow",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "LISG/ECHO",
+      "evidence": "LISG/ECHO",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "Tapping",
+      "evidence": "Tapping",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "Blood Transfussion",
+      "evidence": "Blood Transfussion",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "Dressing",
+      "evidence": "Dressing",
+      "source_document": "PROCEDURE CHART",
+      "chunk_number": "2"
+    },
+    {
+      "value": "USG Abdomen & Pelvis (Bedside)",
+      "evidence": "USG ABDOMEN & PELVIS (BEDSIDE)",
+      "source_document": "USG ABDOMEN & PELVIS (BEDSIDE)",
+      "chunk_number": "4"
+    }
+  ],
+  "allergies": [
+    {
+      "value": "Known Drug Allergies: nil",
+      "evidence": "Known Drug Allergies ... nil",
+      "source_document": "NURSES NOTES",
+      "chunk_number": "2"
+    },
+    {
+      "value": "Known Drug Allergies",
+      "evidence": "== Known Orug Allergies",
+      "source_document": "NURSES NOTES",
+      "chunk_number": "3"
+    },
+    {
+      "value": "No known allergies",
+      "evidence": "Allergic History: Ng Erum",
+      "source_document": "CASE RECORD / ADMISSION RECORD (1)",
+      "chunk_number": "5"
+    },
+    {
+      "value": "No known drug allergies",
+      "evidence": "Known Drug Allergies : NKA",
+      "source_document": "CONSULTATION SHEET",
+      "chunk_number": "6"
+    }
+  ],
+  "admission_medications": [],
+  "discharge_medications": [
+    {
+      "value": "TAB. RACIPER 40MG",
+      "evidence": "TAB. RACIPER 40MG 1-0-0 7 DAYS",
+      "source_document": "ADVICE ON DISCHARGE",
+      "chunk_number": "1"
+    },
+    {
+      "value": "TAB. EMESET",
+      "evidence": "TAB, EMESET 3 DAYS",
+      "source_document": "ADVICE ON DISCHARGE",
+      "chunk_number": "1"
+    },
+    {
+      "value": "TAB M STRONG",
+      "evidence": "TAB M STRONG J 1-0-0 IS DAYS",
+      "source_document": "ADVICE ON DISCHARGE",
+      "chunk_number": "1"
+    },
+    {
+      "value": "TAB. ENTR¢",
+      "evidence": "TAB. ENTR¢ ‘10 -] 3 DAYS",
+      "source_document": "ADVICE ON DISCHARGE",
+      "chunk_number": "1"
+    },
+    {
+      "value": "TAB. MEFTAL SPAS",
+      "evidence": "TAB. MEFTAL SPAS ITABSOS | 4TABLETS",
+      "source_document": "ADVICE ON DISCHARGE",
+      "chunk_number": "1"
+    }
+  ],
+  "hospital_course": [
+    {
+      "value": "Treated with IV fluids, IV antibiotics, IV PPI's, IV antiemetics and other supportive measures.",
+      "evidence": "She was treated with IV fluids, IV antibiotics, 1V PPI's, ['V antiemetics and other supportive measures.",
+      "source_document": "COURSE IN THE HOSPITAL",
+      "chunk_number": "1"
+    },
+    {
+      "value": "Initial serum creatinine 1.64me/dl, repeat 1.17mg/dl.",
+      "evidence": "Initial investigations showed normal CBC, Serum creatinine (1.64me/dl) done was elevated... Repeat Serum Creatinine(1.17?mg/dl) done was normal.",
+      "source_document": "COURSE IN THE HOSPITAL",
+      "chunk_number": "1"
+    },
+    {
+      "value": "Low serum sodium (128.00mnol/L).",
+      "evidence": "Serum electrolytes done showed low serum sodium( 128.00mnol/L).",
+      "source_document": "COURSE IN THE HOSPITAL",
+      "chunk_number": "1"
+    },
+    {
+      "value": "Serum Creatinine: 0.85 mg/dL",
+      "evidence": "SERUM CREATININE 0.85 mg/dL",
+      "source_document": "BIOCHEMISTRY REPORT",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Blood Sugar (RBS): 496.00 mg/dl",
+      "evidence": "BLOOD SUGAR (RBS) 496.00 mg/dl",
+      "source_document": "BIOCHEMISTRY REPORT",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Serum Sodium: 127.90 mmol/L",
+      "evidence": "SODIUM (127.90) mmol/L",
+      "source_document": "BIOCHEMISTRY REPORT",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Serum Potassium: 3.64 mmol/L",
+      "evidence": "POTASSIUM (K+) 3.64 mmol/L",
+      "source_document": "BIOCHEMISTRY REPORT",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Serum Chloride: 84.90 mmol/L",
+      "evidence": "S.CHLORIDE 84.90 mmol/L",
+      "source_document": "BIOCHEMISTRY REPORT",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Haemoglobin: 12.0 g/dl",
+      "evidence": "HAEMOGLOBIN (HB) 12.0 g/dl",
+      "source_document": "HAEMATOLOGY REPORT",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Platelet count: 1.80 Lakhs/cumm",
+      "evidence": "PLATELET COUNT 1.80 Lakhs/cumm",
+      "source_document": "HAEMATOLOGY REPORT",
+      "chunk_number": "4"
+    },
+    {
+      "value": "Chief complaints of generalised itching",
+      "evidence": "Chief Complaints : Oo I Pens Mele Q ... M Yone Genrndbized prtchen.",
+      "source_document": "CASE RECORD / ADMISSION RECORD (1)",
+      "chunk_number": "5"
+    },
+    {
+      "value": "PR: 120 b/m, BP: 90/60 mmHg, RR: 16 b/m, SPO2: 98%",
+      "evidence": "PR: 120 b/m ... BP: 90/60 mmHg |RR: 16 4 im im SPO2 98",
+      "source_document": "CASE RECORD / ADMISSION RECORD (2)",
+      "chunk_number": "5"
+    },
+    {
+      "value": "BP 140/90 mmHg, SpO2 94%, HR 116 bpm",
+      "evidence": "BP- 140/90 mmHg, SpO2 94%, HR 116 bpm",
+      "source_document": "CONSULTATION SHEET",
+      "chunk_number": "6"
+    },
+    {
+      "value": "Intake/Output charting observed",
+      "evidence": "INTAKE/OUTPUT CHART",
+      "source_document": "NURSING DOCUMENTATION",
+      "chunk_number": "7"
+    },
+    {
+      "value": "Nursing documentation recorded",
+      "evidence": "NURSING DOCUMENTATION",
+      "source_document": "NURSING DOCUMENTATION",
+      "chunk_number": "7"
+    }
+  ],
+  "follow_up_instructions": [
+    {
+      "value": "Review on 09.03.2026 for CBC.",
+      "evidence": "Review on 09.03. 2026. CBC",
+      "source_document": "FOLLOW-UP INSTRUCTIONS",
+      "chunk_number": "1"
+    },
+    {
+      "value": "Review immediately in case of fever, loose stools, vomiting, fatigue.",
+      "evidence": "Review immediately in case of fever, loose stools, vomiting, fatigue.",
+      "source_document": "FOLLOW-UP INSTRUCTIONS",
+      "chunk_number": "1"
+    }
+  ],
+  "pending_results": [
+    {
+      "value": "Urine culture and sensitivity",
+      "evidence": "Urine culture and sensitivity sent- report awaited.",
+      "source_document": "COURSE IN THE HOSPITAL / FOLLOW-UP INSTRUCTIONS",
+      "chunk_number": "1"
+    }
+  ],
+  "discharge_condition": [
+    {
+      "value": "Hemodynamically stable",
+      "evidence": "Hemodynamically stable",
+      "source_document": "CONDITION AT DISCHARGE",
+      "chunk_number": "1"
+    }
+  ]
+}
