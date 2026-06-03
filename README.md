@@ -58,17 +58,43 @@ Just a disciplined crew of AI agents doing what they do best. 🧠⚕️
 
 ## 🤖 Meet the Crew
 
-Five specialized agents. One shared mission: clinical accuracy.
+Three specialized agents. One shared mission: clinical accuracy.
 
-| # | Agent | Role |
-|---|-------|------|
-| 1️⃣ | **Senior Clinical Document Analyst** | Extracts structured medical entities from each document chunk |
-| 2️⃣ | **Conflict Detection Agent** | Hunts down contradictions in diagnoses, dates, procedures, and allergies |
-| 3️⃣ | **Medication Reconciliation Agent** | Compares admission and discharge medication lists, flags every change |
-| 4️⃣ | **Clinician Review Agent** | Flags uncertain or missing fields and generates review warnings |
-| 5️⃣ | **Discharge Summary Generator** | Converts all validated evidence into the final structured report |
+### 🧠 1. Document Analyst Agent
 
-Each agent is purpose-built, working in sequence to ensure **no detail slips through the cracks**.
+The first responder. This agent digs through raw document text chunk by chunk and pulls out every clinical detail that matters:
+
+- **Diagnoses** — primary, secondary, comorbidities
+- **Medications** — names, doses, routes
+- **Procedures** — what was done and when
+- **Allergies** — substances and reaction types
+- **Clinical events** — anything significant that happened during the stay
+
+### ⚠️ 2. Clinical Safety Reviewer Agent
+
+The quality gatekeeper. Once evidence is aggregated, this agent puts it all under a microscope and asks the hard questions:
+
+- Are there **medication conflicts** between what was given and what was prescribed?
+- Are **critical fields missing** that a clinician absolutely needs?
+- Are there **clinical inconsistencies** that don't add up?
+
+It wields three powerful tools to do this:
+- 🔧 **Medication Reconciliation Tool** — compares admission vs. discharge meds
+- 🔧 **Conflict Detection Tool** — surfaces contradictions across the document
+- 🔧 **Clinician Review Tool** — flags uncertain or undocumented fields
+
+### 📝 3. Discharge Summary Generator Agent
+
+The final word. Takes all the validated, safety-reviewed evidence and converts it into a clean, structured discharge summary — ready for the clinician's desk.
+
+- **Zero hallucinated facts** — only what was actually found in the document
+- Any field that couldn't be confirmed is explicitly marked:
+
+```
+NOT DOCUMENTED — CLINICIAN REVIEW REQUIRED
+```
+
+Each agent hands off cleanly to the next, forming a pipeline where **accuracy compounds at every step**.
 
 ---
 
@@ -78,20 +104,19 @@ Each agent is purpose-built, working in sequence to ensure **no detail slips thr
 📄 PDF Input
      │
      ▼
-🔍 PDF Extraction (PyMuPDF + OCR Fallback)
+🔍 PDF Extraction (PyMuPDF + OCR)
      │
      ▼
 ✂️  Chunking Engine
      │
      ▼
-🧠 CrewAI Document Analyst  ◄── (runs per chunk)
+🧠 CrewAI Document Analyst (per chunk)
      │
      ▼
 🗂️  Evidence Aggregation
      │
-     ├──► ⚠️  Conflict Detection
-     │
-     ├──► 💊 Medication Reconciliation
+     ▼
+⚠️  Conflict Detection + 💊 Medication Reconciliation
      │
      ▼
 🩺 Clinician Safety Review
@@ -100,7 +125,7 @@ Each agent is purpose-built, working in sequence to ensure **no detail slips thr
 📋 Final Discharge Summary Generation
      │
      ▼
-📦 Outputs: JSON + Markdown + Step Trace
+📦 Outputs (JSON + Markdown + Step Trace)
 ```
 
 ---
@@ -112,29 +137,29 @@ discharge_summary_agent/
 │
 ├── src/
 │   └── discharge_summary_agent/
-│       ├── main.py                          # 🚀 Entry point
-│       ├── crew.py                          # 🤖 CrewAI crew definition
-│       ├── config/                          # ⚙️  Agent & task configs
+│       ├── main.py                               # 🚀 Full pipeline orchestration
+│       ├── crew.py                               # 🤖 CrewAI agents + tasks
 │       ├── tools/
-│       │   ├── pdf_reader_tool.py           # 🔍 PDF + OCR extraction
-│       │   ├── conflict_detection_tool.py   # ⚠️  Contradiction finder
-│       │   ├── medication_reconciliation_tool.py  # 💊 Med comparison
-│       │   └── clinician_review_tool.py     # 🩺 Safety flag generator
+│       │   ├── pdf_reader_tool.py                # 🔍 PDF + OCR extraction
+│       │   ├── conflict_detection_tool.py        # ⚠️  Contradiction finder
+│       │   ├── medication_reconciliation_tool.py # 💊 Admission vs discharge med comparison
+│       │   └── clinician_review_tool.py          # 🩺 Missing field & safety flag generator
 │       ├── utils/
-│       │   └── document_chunker.py          # ✂️  Smart document splitter
-│       └── agents/                          # 🧠 Agent definitions
+│       │   └── document_chunker.py               # ✂️  Smart document splitter
+│       └── config/
+│           ├── agents.yaml                       # ⚙️  Agent definitions
+│           └── tasks.yaml                        # 📋 Task definitions
 │
 ├── data/
-│   ├── sample.pdf                           # 📄 Test patient 1
-│   └── sample_patient_2.pdf                 # 📄 Test patient 2
+│   └── sample.pdf                                # 📄 Sample discharge document
 │
-├── outputs/                                 # 📊 All generated results
+├── outputs/                                      # 📊 All generated results
 │   ├── merged_evidence.json
 │   ├── safety_review.json
 │   ├── discharge_summary.md
 │   └── step_trace.json
 │
-├── requirements.txt
+├── pyproject.toml                                # 📦 Project metadata & dependencies
 └── README.md
 ```
 
@@ -173,8 +198,10 @@ source .venv/bin/activate
 ### 3️⃣ Install Dependencies
 
 ```bash
-uv pip install -r requirements.txt
+uv pip install -e .
 ```
+
+> 💡 This installs the project and all its dependencies defined in `pyproject.toml`.
 
 > ⚠️ Tesseract OCR must also be installed on your system for scanned PDF support.  
 > Mac: `brew install tesseract` | Ubuntu: `sudo apt install tesseract-ocr`
@@ -260,6 +287,13 @@ Please open an issue first to discuss major changes.
 
 ---
 
+## 📜 License
+
+MIT License — use it, build on it, make healthcare better with it. 🌍
+
+---
+
+<div align="center">
 
 Built with ❤️ using [CrewAI](https://crewai.com) · Powered by multi-agent reasoning · Designed for clinical safety
 
