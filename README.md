@@ -196,15 +196,48 @@ source .venv/bin/activate
 ```
 
 ### 3️⃣ Install Dependencies
-
+ 
+Install all project dependencies in one shot:
+ 
 ```bash
 uv pip install -e .
 ```
-
-> 💡 This installs the project and all its dependencies defined in `pyproject.toml`.
-
-> ⚠️ Tesseract OCR must also be installed on your system for scanned PDF support.  
-> Mac: `brew install tesseract` | Ubuntu: `sudo apt install tesseract-ocr`
+ 
+> 💡 This reads `pyproject.toml` and installs everything automatically.
+ 
+Or install packages individually:
+ 
+```bash
+uv pip install "crewai[google-genai,tools]" \
+               "google-generativeai>=0.8.6" \
+               "pdfplumber>=0.11.9" \
+               "pillow>=12.2.0" \
+               "pymupdf>=1.26.7" \
+               "pytesseract>=0.3.13" \
+               "python-dotenv>=1.2.2"
+```
+ 
+Here's what each package brings to the party:
+ 
+| Package | Purpose |
+|---------|---------|
+| `crewai[google-genai,tools]` | 🤖 Multi-agent framework + Google Gemini support + built-in tools |
+| `google-generativeai` | 🧠 Google Gemini API client |
+| `pdfplumber` | 📄 Precise text & table extraction from PDFs |
+| `pillow` | 🖼️ Image processing for scanned document pages |
+| `pymupdf` | ⚡ Fast PDF parsing and page rendering |
+| `pytesseract` | 🔍 OCR engine wrapper for image-based PDFs |
+| `python-dotenv` | 🔑 Loads API keys from your `.env` file |
+ 
+> ⚠️ **Tesseract OCR** must also be installed at the system level for scanned PDF support:  
+> **Mac:** `brew install tesseract`  
+> **Ubuntu/Debian:** `sudo apt install tesseract-ocr`  
+> **Windows:** Download the installer from [UB-Mannheim/tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+ 
+> 🔑 **API Key Setup:** Create a `.env` file in the project root and add your Google Gemini API key:
+> ```
+> GEMINI_API_KEY=your_api_key_here
+> ```
 
 ### 4️⃣ Add Your PDF
 
