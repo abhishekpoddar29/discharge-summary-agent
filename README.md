@@ -5,7 +5,6 @@
 [![CrewAI](https://img.shields.io/badge/Built%20with-CrewAI-blueviolet?style=for-the-badge)](https://crewai.com)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)](https://python.org)
 [![UV](https://img.shields.io/badge/Package%20Manager-UV-orange?style=for-the-badge)](https://github.com/astral-sh/uv)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 ---
 
