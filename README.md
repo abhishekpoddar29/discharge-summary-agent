@@ -169,7 +169,7 @@ discharge_summary_agent/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/discharge-summary-agent.git
+git clone https://github.com/abhishekpoddar29/discharge-summary-agent.git
 cd discharge-summary-agent
 ```
 
